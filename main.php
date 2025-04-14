@@ -68,7 +68,7 @@ include "dashboard_connection.php";
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Price</th>
+                    <th>Price(per ml)</th>
                 </tr>
             </thead>
 
@@ -84,7 +84,7 @@ include "dashboard_connection.php";
                     echo "<tr>";
                     echo "<td>" . $products["id"] . "</td>";
                     echo "<td>" . $products["name"] . "</td>";
-                    echo "<td>" . $products["price"] . "</td>";
+                    echo "<td>" . $products["price"] . "tk</td>";
                     echo "</tr>";
                 }
 
