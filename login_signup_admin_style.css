@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Heading */
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #ffc107;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  /* Form styling */
+  form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Form fields */
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #ccc;
+  }
+  
+  form input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Submit button */
+  button {
+    background-color: #ffc107;
+    color: #000;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+  }
+  
+  /* Link below the form */
+  p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+  }
+  
+  a {
+    color: #ffcb8e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #ffffff;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 500px) {
+    form {
+      padding: 25px 20px;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+    }
+  
+    form input, button {
+      font-size: 15px;
+    }
+  }
+  
