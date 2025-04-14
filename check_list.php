@@ -28,6 +28,9 @@
         <!-- Navigation bar with developer credit and logout link -->
         <nav>
             <h1>Developed By Rakib Chowdhury</h1>
+            <a href="admin.php">Add More</a>
+            <a href="update_product.php">Update</a>
+            <a href="delete_product.php">Delete</a>
             <a href="admin_login.php">Logout</a>
         </nav>
 
@@ -73,7 +76,6 @@
             <h1 class="section-title">Manage Products</h1>
             <div class="button-group">
                 <!-- Link to add more products -->
-                <a href="admin.php">Add More</a>
             </div>
 
             <!-- Footer with developer credit -->
