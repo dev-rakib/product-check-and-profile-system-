@@ -26,7 +26,7 @@
         $password = $_POST["password"];
         
         // SQL query to get all users (should ideally filter with WHERE email = '$email')
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM users WHERE email = '$email'";
         $details = mysqli_query($conn, $sql);
 
         // Check if any users exist
