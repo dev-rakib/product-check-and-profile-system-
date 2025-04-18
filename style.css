@@ -129,6 +129,7 @@ nav {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
+
 nav a {
     color: #ffc107;
     font-weight: 600;
@@ -144,6 +145,231 @@ nav a:hover {
     border-radius: 5px;
     padding: 10px 20px;
 }
+
+/* order_submit Section */
+div.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.7s ease-in-out;
+    text-align: center;
+}
+
+div.order h1 {
+    font-size: 1.8rem;
+    color: #ffc107;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px #000;
+}
+
+div.order form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+div.order input[type="number"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+div.order input::placeholder {
+    color: #ccc;
+}
+
+div.order input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #ffc107;
+}
+
+div.order button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ffc107;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+div.order button:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Search Section */
+div.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.7s ease-in-out;
+    text-align: center;
+}
+
+div.search h1 {
+    font-size: 1.8rem;
+    color: #ffc107;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px #000;
+}
+
+div.search form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+div.search input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+div.search input::placeholder {
+    color: #ccc;
+}
+
+div.search input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #ffc107;
+}
+
+div.search button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ffc107;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+div.search button:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Order Section */
+.order {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 30px 25px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.order h1 {
+    font-size: 1.8rem;
+    color: #ffc107;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px #000;
+}
+
+.order form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.order input[type="number"] {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    backdrop-filter: blur(8px);
+    width: 250px;
+}
+
+.order input::placeholder {
+    color: #ccc;
+}
+
+.order input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #ffc107;
+}
+
+.order button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ffc107;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.order button:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Order Result Message */
+.order .result {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ffddc1;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
 
 footer {
     text-align: center;
@@ -165,6 +391,8 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: #ffc107;
 }
+
+
 /* Animations */
 @keyframes fadeIn {
     0% {opacity: 0; transform: translateY(-20px);}
