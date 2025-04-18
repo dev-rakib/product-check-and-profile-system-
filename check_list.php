@@ -27,13 +27,15 @@
 
         <!-- Navigation bar with developer credit and useful links -->
         <nav>
-            <h1>Developed By Rakib Chowdhury</h1>
+            <h1>ADMIN</h1>
             <!-- Link to add new product -->
-            <a href="admin.php">Add More</a>
+            <a href="admin.php">Add</a>
             <!-- Link to update product -->
             <a href="update_product.php">Update</a>
             <!-- Link to delete product -->
             <a href="delete_product.php">Delete</a>
+            <!-- Link to orders product -->
+            <a href="admin_orders_list.php">Orders</a>
             <!-- Link to logout -->
             <a href="logout.php">Logout</a>
         </nav>
