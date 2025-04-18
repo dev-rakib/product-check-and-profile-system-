@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- External CSS file for styling -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login_signup_admin_style.css">
 
     <!-- Page title -->
     <title>check login</title>
@@ -44,11 +44,12 @@
                 $_SESSION["password"] = $password;
 
                 // Redirect to main.php
-                header("Location: main.php");
+                header("Location: index.php");
                 exit();
             } else {
                 // If password does not match
                 echo "Wrong Password";
+                header("location: login.html");
             }
 
         } else {
