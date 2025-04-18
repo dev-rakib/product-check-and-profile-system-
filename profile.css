@@ -64,40 +64,46 @@ body {
     transform: scale(1.05);
 }
 
-.table-wrapper {
-    overflow-x: auto;
-    border-radius: 10px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.1);
-    color: #f7f7f7;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 15px;
-    text-align: center;
-}
-
-th {
-    background: #ffc107;
-    color: #1c1c1c;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
+/* Profile card container */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-tr:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transition: 0.3s ease;
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ffc107;
+    object-fit: cover;
 }
 
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    color: #ffc107;
+}
+
+.profile-info p {
+    color: #ccc;
+    margin: 10px 0;
+}
+
+.profile-info .user-id {
+    margin-top: 15px;
+    color: #f7f7f7;
+}
+
+/* Footer */
 footer {
     text-align: center;
     margin-top: 30px;
@@ -105,56 +111,190 @@ footer {
     color: #888;
 }
 
-.form-section {
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 16px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-info p {
+        font-size: 0.9rem;
+    }
 }
 
-.update-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .brand-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-info p {
+        font-size: 0.8rem;
+    }
 }
 
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #ffc107;
+@media (max-width: 450px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-links a {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .profile-pic img {
+        width: 90px;
+        height: 90px;
+        border-width: 2px;
+    }
+
+    .profile-info {
+        text-align: center;
+        flex: 1;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        min-width: 0;
+    }
+
+    .profile-info h2 {
+        font-size: 1.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .profile-info p {
+        font-size: 0.85rem;
+        margin: 6px 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .profile-info .user-id {
+        font-size: 0.75rem;
+    }
+
+    .brand-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    body {
+        padding: 10px;
+    }
 }
 
-.form-group input {
-    width: 100%;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #f7f7f7;
-    font-size: 1rem;
-}
 
-.form-group input:focus {
-    outline: 2px solid #ffc107;
-    background: rgba(255, 255, 255, 0.15);
-}
+@media (max-width: 430px) {
+    .nav-links a {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
 
-.update-btn {
-    background: #ffc107;
-    color: #1c1c1c;
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
+    .profile-card {
+        padding: 15px;
+        gap: 20px;
+    }
 
-.update-btn:hover {
-    background: #ffddc1;
-    color: #1c1c1c;
-    transform: scale(1.05);
-}
+    .profile-pic img {
+        width: 90px;
+        height: 90px;
+        border-width: 2px;
+    }
 
+    .profile-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .profile-info p {
+        font-size: 0.8rem;
+        margin: 6px 0;
+    }
+
+    .profile-info .user-id {
+        font-size: 0.75rem;
+    }
+
+    .brand-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
