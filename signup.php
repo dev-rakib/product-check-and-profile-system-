@@ -17,41 +17,58 @@
     // Include the database connection file
     include "dashboard_connection.php";
 
-    // Check if the form has been submitted via POST method
+    // Check if the form is submitted via POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        // Retrieve and store form inputs
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+        // Get form inputs
+        $name = $_POST["name"]; // User's name
+        $address = $_POST["address"]; // User's address
+        $phone = $_POST["phone"]; // User's phone number
+        $email = $_POST["email"]; // User's email
+        $password = $_POST["password"]; // User's password
 
         // Hash the password for secure storage
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Validate email format using PHP's filter
+        // Initialize the profile picture path variable
+        $profile_path = "";
+
+        // Check if a profile picture is uploaded
+        if (isset($_FILES['profile_pic'])) {
+            // Define the directory for storing uploaded profile pictures
+            $target_dir = "uploads/";
+
+            // Get the original file name of the uploaded profile picture
+            $filename = basename($_FILES["profile_pic"]["name"]);
+
+            // Create a unique file name to prevent overwriting and set the full file path
+            $profile_path = $target_dir . uniqid() . "_" . $filename;
+
+            // Move the uploaded file to the target directory
+            move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $profile_path);
+        }
+
+        // Validate the email format
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Prepare the SQL query to insert user data into the 'users' table
+            $sql = "INSERT INTO users (name, address, phone, email, password, profile_pic) 
+                    VALUES ('$name','$address','$phone','$email','$hashed_password','$profile_path')";
 
-            // SQL query to insert user details into database
-            $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
-
-            // Execute query and check for success
+            // Execute the SQL query
             if (mysqli_query($conn, $sql)) {
-                echo "Signup Successful";
-
-                // Redirect user to login page after successful signup
-                header("location: login.html");
+                // Redirect to the login page after successful signup
+                header("Location: login.html");
+                exit();
             } else {
-                // Show message if insertion fails
-                echo "Please Enter Details Correctly";
+                // Display an error message if the SQL query fails
+                echo "Signup failed: " . mysqli_error($conn);
             }
-
         } else {
-            // Show error if email is not valid
-            echo "Please Enter A Valid Email";
+            // Display an error message if the email is not valid
+            echo "Please enter a valid email.";
         }
     }
 
-    // Close database connection
+    // Close the database connection
     mysqli_close($conn);
     ?>
     </h1>
