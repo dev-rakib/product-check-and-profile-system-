@@ -17,17 +17,21 @@ try {
 }
 
 #creating needed table
-// $sql = "CREATE TABLE products (
-//     id INT PRIMARY KEY AUTO_INCREMENT,
-//     name VARCHAR(100) NOT NULL,
+// $sql = "CREATE TABLE IF NOT EXISTS orders (
+//     order_id INT AUTO_INCREMENT PRIMARY KEY,
+//     user_id INT NOT NULL,
+//     product_id INT NOT NULL,
+//     product_name VARCHAR(255) NOT NULL,
 //     quantity INT NOT NULL,
-//     price INT NOT NULL,
-//     insert_time DATETIME DEFAULT CURRENT_TIMESTAMP
-// )";
+//     price DECIMAL(10, 2) NOT NULL,
+//     ordered_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+//     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+//     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+// ) ENGINE=InnoDB;";
 
-// if (mysqli_query($conn,$sql)){
-//     echo "Table Created";
+// if ($conn->query($sql) === TRUE) {
+//     echo "Table 'orders' created successfully!";
 // } else {
-//     echo "Not Created";
+//     echo "Error creating table: " . $conn->error;
 // }
 ?>
