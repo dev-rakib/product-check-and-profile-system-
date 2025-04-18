@@ -25,19 +25,23 @@
             <h1 class="section-title">Products</h1>
         </header>
 
-        <!-- Navigation bar with developer credit and logout link -->
+        <!-- Navigation bar with developer credit and useful links -->
         <nav>
             <h1>Developed By Rakib Chowdhury</h1>
+            <!-- Link to add new product -->
             <a href="admin.php">Add More</a>
+            <!-- Link to update product -->
             <a href="update_product.php">Update</a>
+            <!-- Link to delete product -->
             <a href="delete_product.php">Delete</a>
-            <a href="admin_login.php">Logout</a>
+            <!-- Link to logout -->
+            <a href="logout.php">Logout</a>
         </nav>
 
-        <!-- Table section for displaying product details -->
+        <!-- Table section for displaying product details from the database -->
         <div class="table-wrapper">
             <table>
-                <!-- Table header -->
+                <!-- Table headers -->
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -47,14 +51,14 @@
                     </tr>
                 </thead>
 
-                <!-- Table body populated with PHP and MySQL data -->
+                <!-- Table body: dynamically filled using PHP -->
                 <tbody>
                     <?php
-                    // SQL query to fetch all records from the 'products' table
+                    // SQL query to fetch all products from the 'products' table
                     $sql = "SELECT * FROM products";
                     $result = mysqli_query($conn, $sql);
 
-                    // Loop through each row and display the data in the table
+                    // Loop through each product row and display in the table
                     while($products = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>".$products["id"]."</td>";
@@ -64,18 +68,18 @@
                         echo "</tr>";
                     }
 
-                    // Close the database connection
+                    // Close the database connection after use
                     mysqli_close($conn);
                     ?>
                 </tbody>
             </table>
         </div>
 
-        <!-- Section for additional actions (like adding more products) -->
+        <!-- Section with title and placeholder for future action buttons -->
         <section class="actions">
             <h1 class="section-title">Manage Products</h1>
             <div class="button-group">
-                <!-- Link to add more products -->
+                <!-- Future action buttons can be added here -->
             </div>
 
             <!-- Footer with developer credit -->
@@ -85,7 +89,7 @@
         </section>
     </div>
 
-    <!-- Empty div for future use or styling purposes -->
+    <!-- Placeholder div that can be styled or used for extra content -->
     <div class="copy_center">
     </div>
 </body>
