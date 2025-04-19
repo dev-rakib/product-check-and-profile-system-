@@ -79,17 +79,18 @@ mysqli_close($conn);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding and responsive design meta tags -->
     <meta charset="UTF-8">
     <title>Update Profile - Perfume Zone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Link to custom Glassmorphism CSS -->
+    <!-- Core style files -->
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="update_profile.css"> <!-- NEW CSS FILE -->
 
-    <!-- External fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <!-- Header Section -->
@@ -103,41 +104,55 @@ mysqli_close($conn);
             <a href="profile.php">Back to Profile</a>
         </nav>
 
-        <!-- Profile Update Form -->
-        <section class="form-section">
+        <!-- Profile Update Form Section styled like profile card -->
+        <section class="profile-card" style="flex-direction: column; align-items: stretch;">
             <!-- Display error message if any -->
             <?php if (isset($error)): ?>
                 <p style="color: #ff6b6b; font-weight: bold; margin-bottom: 20px;"><?php echo $error; ?></p>
             <?php endif; ?>
 
             <!-- Form to update user details -->
-            <form method="POST" class="update-form" enctype="multipart/form-data">
+            <form method="POST" class="update-form" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 20px;">
                 <!-- Input for Name -->
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
                 </div>
-                
+
                 <!-- Input for Address -->
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" name="address" id="address" value="<?php echo htmlspecialchars($user['address']); ?>" required>
                 </div>
-                
+
                 <!-- Input for Phone Number -->
                 <div class="form-group">
                     <label for="phone">Phone</label>
                     <input type="text" name="phone" id="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
                 </div>
-                
+
                 <!-- Input for Profile Picture -->
                 <div class="form-group">
-                    <label for="profile_pic">Profile Picture</label>
+                    <label for="profile_pic">Current Profile Picture</label>
+
+                    <!-- Display Current Profile Picture -->
+                    <?php if (!empty($user['profile_pic'])): ?>
+                        <div class="current-pic">
+                            <img src="<?php echo htmlspecialchars($user['profile_pic']); ?>" alt="Current Profile Picture">
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Input for New Profile Picture -->
+                <div class="form-group">
+                    <label for="profile_pic">Upload New Picture</label>
                     <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
                 </div>
 
+
+
                 <!-- Submit button -->
-                <button type="submit" class="update-btn">Update Profile</button>
+                <button type="submit" class="update-btn" style="align-self: center;">Update Profile</button>
             </form>
         </section>
 
@@ -147,4 +162,5 @@ mysqli_close($conn);
         </footer>
     </div>
 </body>
+
 </html>
