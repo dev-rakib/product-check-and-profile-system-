@@ -1,0 +1,87 @@
+/* update_profile.css */
+
+/* Update Profile Form Enhancements */
+.update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.update-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffc107;
+    font-size: 1rem;
+}
+
+.update-form input[type="text"],
+.update-form input[type="file"] {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.update-form input[type="text"]:focus,
+.update-form input[type="file"]:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 5px #ffc107;
+}
+
+.update-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ffc107;
+    color: #1c1c1c;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.update-btn:hover {
+    background-color: #ffddc1;
+    transform: scale(1.05);
+    color: #1c1c1c;
+}
+
+/* Center the current profile picture */
+.current-pic {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.current-pic img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ffc107;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsive tweaks for smaller devices */
+@media (max-width: 480px) {
+    .update-form input[type="text"],
+    .update-form input[type="file"] {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .update-btn {
+        font-size: 0.95rem;
+        padding: 10px 25px;
+    }
+}
