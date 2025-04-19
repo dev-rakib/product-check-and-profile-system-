@@ -103,6 +103,65 @@ body {
     color: #f7f7f7;
 }
 
+/* Orders Card Styling */
+.orders-card {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.orders-card h2 {
+    font-size: 2rem;
+    color: #ffc107;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.order {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #ffddc1;
+    font-size: 1.2rem;
+}
+
+.order-header h3 {
+    color: #ffc107;
+    font-size: 1.4rem;
+}
+
+.order-details {
+    font-size: 1rem;
+}
+
+.order-details p {
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.order-details .icon {
+    margin-right: 10px;
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -134,6 +193,14 @@ footer {
 
     .profile-info p {
         font-size: 0.9rem;
+    }
+
+    .orders-card {
+        padding: 20px;
+    }
+
+    .order {
+        padding: 15px;
     }
 }
 
@@ -169,69 +236,9 @@ footer {
     .profile-info p {
         font-size: 0.8rem;
     }
-}
 
-@media (max-width: 450px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .nav-links a {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    .profile-card {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .profile-pic img {
-        width: 90px;
-        height: 90px;
-        border-width: 2px;
-    }
-
-    .profile-info {
-        text-align: center;
-        flex: 1;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        min-width: 0;
-    }
-
-    .profile-info h2 {
-        font-size: 1.5rem;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        white-space: normal;
-    }
-
-    .profile-info p {
-        font-size: 0.85rem;
-        margin: 6px 0;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        white-space: normal;
-    }
-
-    .profile-info .user-id {
-        font-size: 0.75rem;
-    }
-
-    .brand-title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 1rem;
+    .orders-card h2 {
+        font-size: 1.6rem;
     }
 
     footer {
@@ -244,57 +251,5 @@ footer {
 
     body {
         padding: 10px;
-    }
-}
-
-
-@media (max-width: 430px) {
-    .nav-links a {
-        padding: 8px 18px;
-        font-size: 0.85rem;
-    }
-
-    .profile-card {
-        padding: 15px;
-        gap: 20px;
-    }
-
-    .profile-pic img {
-        width: 90px;
-        height: 90px;
-        border-width: 2px;
-    }
-
-    .profile-info h2 {
-        font-size: 1.4rem;
-    }
-
-    .profile-info p {
-        font-size: 0.8rem;
-        margin: 6px 0;
-    }
-
-    .profile-info .user-id {
-        font-size: 0.75rem;
-    }
-
-    .brand-title {
-        font-size: 1.8rem;
-    }
-
-    .section-title {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.75rem;
-    }
-
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 15px;
     }
 }
