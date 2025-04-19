@@ -1,3 +1,12 @@
+<?php
+// Start session to manage logged-in user data
+session_start();
+
+// Redirect to login page if the user is not logged in
+if (!isset($_SESSION["email"])) {
+    header("location: login.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Linking external CSS file for styling -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login_signup_admin_style.css">
+    <link rel="stylesheet" href="admin_orders_list.css">
     
     <!-- Page title -->
     <title>Check Orders</title>
@@ -130,10 +138,6 @@
 
         <!-- Section with title and placeholder for future action buttons -->
         <section class="actions">
-            <h1 class="section-title">Manage Products</h1>
-            <div class="button-group">
-                <!-- Future action buttons can be added here -->
-            </div>
 
             <!-- Footer with developer credit -->
             <footer>
